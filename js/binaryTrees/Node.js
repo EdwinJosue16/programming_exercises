@@ -1,5 +1,5 @@
-const { LEFT, RIGTH } = require("./constants");
-
+const LEFT = 0;
+const RIGTH = 1;
 class Node {
   constructor(element) {
     this.element = element;
