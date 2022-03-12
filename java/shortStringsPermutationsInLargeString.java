@@ -22,8 +22,8 @@ class Exercise
 	    shortStr = this.sortString(shortStr);
 	    String strToCompare = "";
 	    String strToCompareCopy = "";
-	    for(int i = 0; i <= largeStr.length() - 4; ++i ){
-	        strToCompare = largeStr.substring(i, i+ 4);
+	    for(int i = 0; i <= largeStr.length() - shortStr.length(); ++i ){
+	        strToCompare = largeStr.substring(i, i + shortStr.length());
 	        strToCompareCopy = this.sortString(strToCompare);
 	        if(strToCompareCopy.equals(shortStr)){
 	            System.out.println(strToCompare);
