@@ -16,6 +16,9 @@
 // A and B are integers within the range [0..100];
 // at least one solution exists for the given A and B.
 
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
 function solution(A, B) {
    const result = ''
    if(A > B) {
@@ -29,22 +32,22 @@ function solution(A, B) {
 function add(result, Asize, Bsize, b, a){
     if (Asize == 0 && Bsize == 0)
         return result
-    if(Bsize >= 2 && b){
+    if(Bsize >= 2 && ((Asize*2)+2) === Bsize && b){
         Bsize -= 2
         result += 'bb'
         return add(result, Asize, Bsize, false, true)
     }
-    else if(Bsize === 1 && b){
+    else if(b){
         Bsize -= 1
         result += 'b'
         return add(result, Asize, Bsize, false, true)
     }
-    else if(Asize >= 2 && a){
+    else if(Asize >= 2 && ((Bsize*2)+2) === Asize && a){
         Asize -= 2
         result += 'aa'
         return add(result, Asize, Bsize, true, false)
     }
-   else if(Asize === 1 && a){
+   else if(a){
         Asize -= 1
         result += 'a'
         return add(result, Asize, Bsize, true, false)
